@@ -1,0 +1,29 @@
+﻿@model WebClientt.Models.ProductsModel
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Ürün Listesi</h2>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Fiyat</th>
+        <th>Satilamaz</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    
+    @foreach (var item in Model.ulist)
+    {
+    <tr>
+        <td> @item.UrunId </td>
+        <td> @item.UrunAd </td>
+        <td> @item.BirimFiyat </td>
+        <td> @item.Satılamaz </td>
+        <td> <a href="/Products/Guncelle">Güncelle</a></td>
+        <td> <a href="/Products/Sil">Sil</a></td>
+    </tr>
+    }
+</table>
